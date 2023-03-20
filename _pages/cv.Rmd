@@ -1,0 +1,175 @@
+---
+output: 
+  md_document:
+    preserve_yaml: true
+layout: archive
+title: "CV"
+permalink: /cv/
+author_profile: true
+redirect_from:
+  - /resume
+---
+
+{% include base_path %}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(tidyverse)
+library(knitr)
+library(glue)
+library(fontawesome)
+library(readxl)
+library(pagedownCV)
+
+# read in CV data
+cv_entries <- read_excel("../files/cv_data.xlsx", sheet = "cv_entries")
+cv_entries_formatted <- cv_entries |>
+  mutate(date_range = case_when(
+    !is.na(date_end) & grepl('pres', date_end, ignore.case = TRUE) ~ paste0(date, '--'),
+    !is.na(date_end) ~ paste0(date, '--', substr(date_end,3,4)),
+    TRUE ~ as.character(date)))
+
+publications <- read_excel("../files/cv_data.xlsx", sheet = "publications")
+publications_formatted <- publications |> 
+  mutate(authors = gsub("Dybala K|Dybala KE", "**Dybala KE**", authors)) # make my name bold
+
+```
+
+# EDUCATION
+```{r}
+cv_entries_formatted |> 
+  filter(type == 'education') |> 
+  mutate(entry = glue("{what}, {where}")) |> 
+  arrange(desc(date)) |>
+  select(date_range, entry) |> 
+  kable()
+```
+
+# PROFESSIONAL APPOINTMENTS
+```{r}
+cv_entries_formatted |>  
+  filter(type == 'appointments') |> 
+  mutate(entry = glue("{role}, {where}")) |> 
+  arrange(desc(date)) |>
+  select(date_range, entry) |> 
+  kable(escape = FALSE)
+```
+
+# PUBLICATIONS
+```{r}
+publications_formatted |>
+  filter(type == "publication") |> 
+  mutate(year = if_else(is.na(as.numeric(date)), 2100, as.numeric(date))) |>
+  add_leading_zeroes_and_letter("") |> 
+  mutate(
+    year = date,
+    date = if_else(is.na(as.numeric(date)), 2100, as.numeric(date)),
+    url = case_when(
+           !is.na(materials) & !is.na(url) ~ 
+             glue('doi: [{url}](https://doi.org/{url}). Supporting data: [{materials}](https://doi.org/{materials})'),
+           is.na(materials) & !is.na(url) ~
+             glue('doi: [{url}](https://doi.org/{url})'),
+           TRUE ~ NA_character_),
+    entry = case_when(
+           !is.na(url) ~ #published with DOI
+             glue("[{number}] {authors} ({year}) {title}. *{location}* {location_details}.<br>",
+                  "{url}"),
+           is.na(url) & !is.na(location) ~ #published without DOI
+             glue("{authors} ({year}) {title}. *{location}* {location_details}."),
+           is.na(location) ~ #not yet published
+             glue("{authors} ({year}) {title}"))) |> 
+  blank_year_when_repeated() |>
+  select(year, entry) |>
+  manual_page_break_after_row("entry", "Optimizing") |>
+  manual_page_break_after_row("entry", "Projecting demographic") |>
+  knitr::kable()
+```
+
+## Select White Papers
+```{r}
+publications_formatted |>
+  filter(type == "report") |> 
+  mutate(
+    year = date,
+    date = if_else(is.na(as.numeric(date)), 2100, as.numeric(date)),
+    entry = case_when(
+      !is.na(url) ~ #published with URL
+        glue("{authors} ({year}) {title}. *{location}*, {location_details}.<br>",
+             "Available from: {url}</span>"),
+      !is.na(location) ~ #published without URL
+        glue("{authors} ({year}) {title}. *{location}*, {location_details}</span>"),
+      TRUE ~ #not yet published
+        glue("{authors} ({year}) {title}"))) |> 
+  arrange(desc(date), title) |>
+  blank_year_when_repeated() |>
+  select(year, entry) |>
+  knitr::kable()
+```
+
+# RESEARCH GRANTS
+```{r}
+cv_entries_formatted |>
+  filter(type == 'grants') |>
+  mutate(entry = glue('**{role}**, {where}. "{what}" ({additional_info})')) |>
+  arrange(desc(date_end), desc(date)) |>
+  select(date_range, entry) |>
+  kable()
+```
+
+# PRESENTATIONS
+
+## Organized Symposia
+
+```{r}
+publications_formatted |>
+  filter(type == "symposium") |> 
+  mutate(year = date,
+         date = if_else(is.na(as.numeric(date)), 2100, as.numeric(date)),
+         entry = glue("{authors} ({year}) {title}. *{location}*, {location_details}")) |> 
+  #add_leading_zeroes_and_letter("") |> 
+  blank_year_when_repeated() |>
+  select(year, entry) |>
+  # manual_page_break_after_row("entry", "wetland water budget") |>
+  knitr::kable()
+```
+
+## Select Invited Presentations
+
+```{r}
+publications_formatted |>
+  filter(type == "invited_talk") |> 
+  mutate(year = date,
+         date = if_else(is.na(as.numeric(date)), 2100, as.numeric(date)),
+         entry = glue("{authors} ({year}) {title}. *{location}*, {location_details}")) |> 
+  # add_leading_zeroes_and_letter("") |> 
+  blank_year_when_repeated() |>
+  select(year, entry) |>
+  knitr::kable()
+```
+
+## Select Conference Presentations
+
+```{r}
+publications_formatted |>
+  filter(type == "presentation") |> 
+  mutate(year = date,
+         date = if_else(is.na(as.numeric(date)), 2100, as.numeric(date)),
+         entry = glue("{authors} ({year}) {title}. *{location}*, {location_details}")) |> 
+  # add_leading_zeroes_and_letter("") |> 
+  blank_year_when_repeated() |>
+  select(year, entry) |>
+  manual_page_break_after_row("entry", "Multiple benefits of riparian") |>
+  knitr::kable()
+```
+
+# SERVICE
+```{r}
+cv_entries_formatted |>
+  filter(type == 'service') |>
+  mutate(entry = if_else(!is.na(what),
+                         glue("{role}, {what}, {where}"),
+                         glue("{role}, {where}"))) |>
+  arrange(desc(date_end), desc(date)) |>
+  select(date_range, entry) |>
+  kable()
+```
