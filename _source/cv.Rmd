@@ -1,6 +1,10 @@
 ---
+output:
+  md_document:
+    preserve_yaml: TRUE
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "../_pages") })
 layout: archive
-title: "CV"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -30,7 +34,22 @@ publications_formatted <- publications |>
 
 ```
 
-# EDUCATION
+<style>
+table, td, th {
+   border: none!important;
+   vertical-align: top;
+   border-spacing: 0;
+   margin: 0 0 0 0;
+}
+thead {
+  display: none;
+}
+td:first-child {
+  width: 10%;
+}
+</style>
+
+## Education
 ```{r}
 cv_entries_formatted |> 
   filter(type == 'education') |> 
@@ -40,7 +59,7 @@ cv_entries_formatted |>
   kable()
 ```
 
-# PROFESSIONAL APPOINTMENTS
+## Professional Appointments
 ```{r}
 cv_entries_formatted |>  
   filter(type == 'appointments') |> 
@@ -50,7 +69,7 @@ cv_entries_formatted |>
   kable(escape = FALSE)
 ```
 
-# PUBLICATIONS
+## Publications
 ```{r}
 publications_formatted |>
   filter(type == "publication") |> 
@@ -80,7 +99,7 @@ publications_formatted |>
   knitr::kable()
 ```
 
-## Select White Papers
+### Select Reports
 ```{r}
 publications_formatted |>
   filter(type == "report") |> 
@@ -90,9 +109,9 @@ publications_formatted |>
     entry = case_when(
       !is.na(url) ~ #published with URL
         glue("{authors} ({year}) {title}. *{location}*, {location_details}.<br>",
-             "Available from: {url}</span>"),
+             "Available from: {url}"),
       !is.na(location) ~ #published without URL
-        glue("{authors} ({year}) {title}. *{location}*, {location_details}</span>"),
+        glue("{authors} ({year}) {title}. *{location}*, {location_details}"),
       TRUE ~ #not yet published
         glue("{authors} ({year}) {title}"))) |> 
   arrange(desc(date), title) |>
@@ -101,7 +120,7 @@ publications_formatted |>
   knitr::kable()
 ```
 
-# RESEARCH GRANTS
+## Research Grants
 ```{r}
 cv_entries_formatted |>
   filter(type == 'grants') |>
@@ -111,9 +130,9 @@ cv_entries_formatted |>
   kable()
 ```
 
-# PRESENTATIONS
+## Presentations
 
-## Organized Symposia
+### Organized Symposia
 
 ```{r}
 publications_formatted |>
@@ -128,7 +147,7 @@ publications_formatted |>
   knitr::kable()
 ```
 
-## Select Invited Presentations
+### Select Invited Presentations
 
 ```{r}
 publications_formatted |>
@@ -142,7 +161,7 @@ publications_formatted |>
   knitr::kable()
 ```
 
-## Select Conference Presentations
+### Select Conference Presentations
 
 ```{r}
 publications_formatted |>
@@ -157,7 +176,7 @@ publications_formatted |>
   knitr::kable()
 ```
 
-# SERVICE
+## Service & Leadership
 ```{r}
 cv_entries_formatted |>
   filter(type == 'service') |>
