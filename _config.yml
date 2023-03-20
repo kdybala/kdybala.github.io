@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Dr. Kristen E. Dybala"
-  avatar           : "profile.png"
+  avatar           : "/images/profile.png"
   bio              : "Principal Ecologist, Pacific Coast and Central Valley Group, Point Blue Conservation Science"
   location         : "San Francisco, CA"
   employer         :
