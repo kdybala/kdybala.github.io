@@ -57,7 +57,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter @kristendybala
+  username               : &twitter
 facebook:
   username               :
   app_id                 :
@@ -102,7 +102,7 @@ author:
   instagram        :
   impactstory      : "https://profiles.impactstory.org/u/0000-0002-2787-4600"
   lastfm           :
-  linkedin         :
+  linkedin         : "http://www.linkedin.com/in/kdybala"
   orcid            : "http://orcid.org/0000-0002-2787-4600"
   pinterest        :
   soundcloud       :
