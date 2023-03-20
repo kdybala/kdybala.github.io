@@ -10,7 +10,7 @@ redirect_from:
   - /resume
 ---
 
-{% include base\_path %}
+{% include base_path %}
 
 # EDUCATION
 
