@@ -57,7 +57,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter "kristendybala"
+  username               : &twitter
 facebook:
   username               :
   app_id                 :
@@ -82,13 +82,13 @@ analytics:
 author:
   name             : "Dr. Kristen E. Dybala"
   avatar           : "kdybala.jpg"
-  bio              : "Principal Ecologist<br>Point Blue Conservation Science"
-  location         : "San Francisco, CA"
+  bio              : "Principal Ecologist"
+  location         : 
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=V2eYuosAAAAJ"
-  email            :
-  researchgate     : "https://www.researchgate.net/profile/Kristen-Dybala"
+  email            : "kdybala@pointblue.org"
+  researchgate     : 
   uri              :
   bitbucket        :
   codepen          :
@@ -109,7 +109,7 @@ author:
   stackoverflow    : 
   steam            :
   tumblr           :
-  twitter          : "kristendybala"
+  twitter          : 
   vine             :
   weibo            :
   xing             :
