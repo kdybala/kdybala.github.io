@@ -25,21 +25,11 @@ Professional Appointments
 
 Publications
 ======
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+  <ul>Dybala KE, Sesser K, Reiter ME, Shuford WD, Golet GH, Hickey C, Gardali T (In review) Priority Bird Conservation Areas</ul>
   
 Talks
 ======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+  <ul>Dybala KE (2022) Multiple-Benefit Conservation in the Sacramento-San Joaquin Delta. Slough-Side Chat seminar series, hosted by the Delta Science Program, Virtual</ul>
   
 Service and leadership
 ======
