@@ -26,6 +26,8 @@ td:first-child {
 }
 </style>
 
+{% include base_path %}
+
 ## Education
 
 <table>

@@ -49,6 +49,8 @@ td:first-child {
 }
 </style>
 
+{% include base_path %}
+
 ## Education
 ```{r}
 cv_entries_formatted |> 
