@@ -9,22 +9,6 @@ redirect_from:
 
 {% include base_path %}
 
-<style>
-table, td, th {
-   border: none!important;
-   vertical-align: top;
-   border-spacing: 0;
-   margin: 0 0 0 0;
-}
-thead {
-  display: none;
-}
-td:first-child {
-  width: 10%;
-}
-</style>
-
-
 ## Education
 
 <table>
