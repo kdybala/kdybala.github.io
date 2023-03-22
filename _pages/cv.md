@@ -37,7 +37,7 @@ td:first-child {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">2012</td>
-<td style="text-align: left;">Ph.D. in Ecology, University of
+<td style="text-align: left;">Ph.D. in Ecology, University of
 California, Davis</td>
 </tr>
 <tr class="even">
@@ -278,7 +278,7 @@ href="https://doi.org/10.1111/gcb.12228">10.1111/gcb.12228</a>
 <tr class="odd">
 <td style="text-align: left;"></td>
 <td style="text-align: left;">[04] <strong>Dybala KE</strong>, Gardali
-T, Eadie JM (2013) Dependent vs. independent juvenile survival:
+T, Eadie JM (2013) Dependent vs. independent juvenile survival:
 Contrasting drivers of variation and the buffering effect of parental
 care. <em>Ecology</em> 94:1584-1593.<br>doi: <a
 href="https://doi.org/10.1890/12-1443.1">10.1890/12-1443.1</a></td>
