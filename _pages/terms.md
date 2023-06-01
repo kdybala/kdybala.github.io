@@ -4,8 +4,6 @@ title: "Terms and Privacy Policy"
 modified: 2016-06-06
 ---
 
-{% include base_path %}
-
 ## Privacy Policy
 
 The privacy of my visitors is extremely important. This Privacy Policy outlines the types of personal information that is received and collected and how it is used.
