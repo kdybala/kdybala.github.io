@@ -58,7 +58,7 @@ cv_entries_formatted |>
   mutate(entry = glue("{what}, {where}")) |> 
   arrange(desc(date)) |>
   select(date_range, entry) |> 
-  kable()
+  kable(format = 'pipe', col.names = NULL)
 ```
 
 ## Professional Appointments
@@ -68,7 +68,7 @@ cv_entries_formatted |>
   mutate(entry = glue("{role}, {where}")) |> 
   arrange(desc(date)) |>
   select(date_range, entry) |> 
-  kable(escape = FALSE)
+  kable(format = 'simple', col.names = NULL)
 ```
 
 ## Publications
@@ -96,9 +96,7 @@ publications_formatted |>
              glue("{authors} ({year}) {title}"))) |> 
   blank_year_when_repeated() |>
   select(year, entry) |>
-  manual_page_break_after_row("entry", "Optimizing") |>
-  manual_page_break_after_row("entry", "Projecting demographic") |>
-  knitr::kable()
+  kable(format = 'simple', col.names = NULL)
 ```
 
 ### Select Reports
@@ -119,7 +117,7 @@ publications_formatted |>
   arrange(desc(date), title) |>
   blank_year_when_repeated() |>
   select(year, entry) |>
-  knitr::kable()
+  kable(format = 'simple', col.names = NULL)
 ```
 
 ## Research Grants
@@ -129,7 +127,7 @@ cv_entries_formatted |>
   mutate(entry = glue('**{role}**, {where}. "{what}" ({additional_info})')) |>
   arrange(desc(date_end), desc(date)) |>
   select(date_range, entry) |>
-  kable()
+  kable(format = 'simple', col.names = NULL)
 ```
 
 ## Presentations
@@ -146,7 +144,7 @@ publications_formatted |>
   blank_year_when_repeated() |>
   select(year, entry) |>
   # manual_page_break_after_row("entry", "wetland water budget") |>
-  knitr::kable()
+  kable(format = 'simple', col.names = NULL)
 ```
 
 ### Select Invited Presentations
@@ -160,7 +158,7 @@ publications_formatted |>
   # add_leading_zeroes_and_letter("") |> 
   blank_year_when_repeated() |>
   select(year, entry) |>
-  knitr::kable()
+  kable(format = 'simple', col.names = NULL)
 ```
 
 ### Select Conference Presentations
@@ -175,7 +173,7 @@ publications_formatted |>
   blank_year_when_repeated() |>
   select(year, entry) |>
   manual_page_break_after_row("entry", "Multiple benefits of riparian") |>
-  knitr::kable()
+  kable(format = 'simple', col.names = NULL)
 ```
 
 ## Service & Leadership
@@ -187,5 +185,5 @@ cv_entries_formatted |>
                          glue("{role}, {where}"))) |>
   arrange(desc(date_end), desc(date)) |>
   select(date_range, entry) |>
-  kable()
+  kable(format = 'simple', col.names = NULL)
 ```
