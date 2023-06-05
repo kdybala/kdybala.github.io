@@ -1,5 +1,5 @@
 ---
-title: "Protected areas safeguard landbird populations in central coastal California: Evidence from long-term population trends"
+title: "[21] Protected areas safeguard landbird populations in central coastal California: Evidence from long-term population trends"
 collection: publications
 date: 2021-11-01
 venue: 'Ornithological Applications'

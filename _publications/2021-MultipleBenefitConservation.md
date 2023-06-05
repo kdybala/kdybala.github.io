@@ -1,5 +1,5 @@
 ---
-title: "Multiple-Benefit Conservation defined"
+title: "[20] Multiple-Benefit Conservation defined"
 collection: publications
 date: 2021-04-08
 venue: 'Conservation Science and Practice'
