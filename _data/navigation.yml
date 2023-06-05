@@ -1,10 +1,11 @@
 # main links links
 main:
-  - title: "CV"
-    url: /cv/
-  # 
-  # - title: "Publications"
-  #   url: /publications/
+  # - title: "CV"
+  #   url: /cv/
+    # url: https://github.com/elizabethmcd/cv/blob/master/EAM-CV.pdf
+
+  - title: "Publications"
+    url: /publications/
     
   # - title: "Research"
   #   url: /research/
