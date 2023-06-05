@@ -1,5 +1,5 @@
 ---
-title: "Shorebird food energy shortfalls and the effectiveness of habitat incentive programs in record wet, dry and warm years"
+title: "[22] Shorebird food energy shortfalls and the effectiveness of habitat incentive programs in record wet, dry and warm years"
 collection: publications
 date: 2022-05-24
 venue: 'Ecological Monographs'
