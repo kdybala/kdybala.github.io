@@ -44,8 +44,8 @@
         {{ post.citation }}
       {% endif %}
       <br>
-      {% if post.link %}
-        <a href="{{ post.link }}"><i class="fas fa-fw fa-external-link-square-alt" aria-hidden="true"></i></a>
+      {% if post.openaccess %}
+        <i class = "fas fa-fw fa-unlock zoom" aria-hidden="true"></i>
       {% endif %}
       {% if post.paperurl %}
         <a href="{{ post.paperurl }}"><i class="fas fa-fw fa-file-pdf zoom" aria-hidden="true"></i></a>
@@ -59,8 +59,8 @@
       {% if post.data %}
         <a href="{{ post.data }}"><i class="fas fa-fw fa-table zoom" aria-hidden="true"></i></a>
       {% endif %}
-      {% if post.openaccess %}
-        <i class = "fas fa-fw fa-unlock zoom" aria-hidden="true"></i>
+      {% if post.link %}
+        <a href="{{ post.link }}"><i class="fas fa-fw fa-external-link-square-alt" aria-hidden="true"></i></a>
       {% endif %}
       {% if post.award %}
         <i class = "fas fa-fw fa-trophy" aria-hidden="true"></i> {{post.award}}
