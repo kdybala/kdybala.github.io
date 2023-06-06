@@ -1,5 +1,5 @@
 ---
-title: "Priority Bird Conservation Areas in California’s Sacramento–San Joaquin Delta"
+title: "[23] Priority Bird Conservation Areas in California’s Sacramento–San Joaquin Delta"
 collection: publications
 permalink: /publication/2023-PriorityBirdConservationAreas
 date: 2023-01-01
