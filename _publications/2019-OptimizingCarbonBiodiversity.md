@@ -1,5 +1,5 @@
 ---
-title: "[16] Optimizing carbon storage and biodiversity co-benefits in reforested riparian zones"
+title: "[17] Optimizing carbon storage and biodiversity co-benefits in reforested riparian zones"
 collection: publications
 date: 2019-02-01
 venue: 'Journal of Applied Ecology'

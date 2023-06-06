@@ -1,5 +1,5 @@
 ---
-title: "[17] Carbon sequestration in riparian forests: a global synthesis and meta-analysis"
+title: "[16] Carbon sequestration in riparian forests: a global synthesis and meta-analysis"
 collection: publications
 date: 2019-01-01
 venue: 'Global Change Biology'
