@@ -44,9 +44,6 @@
         {{ post.citation }}
       {% endif %}
       <br>
-      {% if post.openaccess %}
-        <i class = "fas fa-fw fa-unlock-alt zoom" aria-hidden="true"></i>
-      {% endif %}
       {% if post.link %}
         <a href="{{ post.link }}"><i class="fas fa-fw fa-link zoom" aria-hidden="true"></i></a>
       {% endif %}
@@ -58,6 +55,9 @@
       {% endif %}
       {% if post.github %}
         <a href="{{ post.github }}"><i class="fab fa-fw fa-github zoom" aria-hidden="true"></i></a>
+      {% endif %}
+      {% if post.openaccess %}
+        <i class = "fas fa-fw fa-unlock-alt zoom" aria-hidden="true"></i>
       {% endif %}
       </p>
         
