@@ -66,6 +66,37 @@
         <i class = "fas fa-fw fa-trophy" aria-hidden="true"></i> {{post.award}}
       {% endif %}
       </p>
+    
+    {% elsif post.collection == 'whitepapers' %}
+
+      <!-- citation and icon code -->
+      <p>
+      {% if post.citation %}
+        {{ post.citation }}
+      {% endif %}
+      <br>
+      {% if post.openaccess %}
+        <i class = "fas fa-fw fa-unlock zoom" aria-hidden="true"></i>
+      {% endif %}
+      {% if post.paperurl %}
+        <a href="{{ post.paperurl }}"><i class="fas fa-fw fa-file-pdf zoom" aria-hidden="true"></i></a>
+      {% endif %}
+      {% if post.code %}
+        <a href="{{ post.code }}"><i class="fas fa-fw fa-code zoom" aria-hidden="true"></i></a>
+      {% endif %}
+      {% if post.github %}
+        <a href="{{ post.github }}"><i class="fab fa-fw fa-github zoom" aria-hidden="true"></i></a>
+      {% endif %}
+      {% if post.data %}
+        <a href="{{ post.data }}"><i class="fas fa-fw fa-table zoom" aria-hidden="true"></i></a>
+      {% endif %}
+      {% if post.link %}
+        <a href="{{ post.link }}"><i class="fas fa-fw fa-external-link-square-alt" aria-hidden="true"></i></a>
+      {% endif %}
+      {% if post.award %}
+        <i class = "fas fa-fw fa-trophy" aria-hidden="true"></i> {{post.award}}
+      {% endif %}
+      </p>
         
     {% elsif post.date %}
       <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
