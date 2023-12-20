@@ -1,10 +1,8 @@
 ---
-title: "[23] Priority Bird Conservation Areas in California’s Sacramento–San Joaquin Delta"
+title: "[24] The Future of Water-Limited Agricultural Landscapes"
 collection: publications
-permalink: /publication/2023-PriorityBirdConservationAreas
-date: 2023-01-01
-venue: 'San Francisco Estuary and Watershed Science'
-link: https://doi.org/10.15447/sfews.2023v21iss3art4
-openaccess: true
-citation: "Dybala KE, Sesser K, Reiter ME, Shuford WD, Golet GH, Hickey C, Gardali T (2023) Priority Bird Conservation Areas in California’s Sacramento–San Joaquin Delta. <i>San Francisco Estuary and Watershed Science</i> 21(3). DOI: 10.15447/sfews.2023v21iss3art4"
+permalink: /publication/2024-WaterLimitedAg
+date: 2024-01-01
+venue: 'Environmental Research Letters'
+citation: "Peterson CA, Davis KF, Dybala KE, Fernández FJ, Ghimire R, Nidumolo U, Roche R. (In press) The Future of Water-Limited Agricultural Landscapes. <i>Environmental Research Letters</i>."
 ---
